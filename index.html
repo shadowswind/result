@@ -4,6 +4,8 @@
 
         <meta charset="utf-8">
         <link rel="stylesheet" href="./bootstrap-3.3.7-dist/css/bootstrap.css">
+        <link href="bootstrap-3.3.7-dist/video5.18.4.js/css/video-js.css" rel="stylesheet" type="text/css">
+        <script src="bootstrap-3.3.7-dist/video5.18.4.js/js/video.min.js"></script>
         <script src="./jquery-3.2.1.js"></script>        
         <script src="./bootstrap-3.3.7-dist/js/bootstrap.js"></script>
     </head>
@@ -65,13 +67,32 @@
                             <input type="text" class="form-control" placeholder="搜索英雄">
                         </div>
                         <button type="submit" class="btn btn-default">搜索</button>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">英雄视频</button>
+                        <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <script>
+                                        videojs.options.flash.swf = "video-js.swf";
+                                    </script>
+                                    <video id="example_video_1" class="video-js vjs-default-skin vjs-big-play-centered" controls preload="none" width="640" height="264"
+                                           poster="http://video-js.zencoder.com/oceans-clip.png"
+                                           data-setup="{}">
+                                        <source src="bootstrap-3.3.7-dist/1.mp4" type='video/mp4' />
+                                        <track kind="captions" src="demo.captions.vtt" srclang="en" label="English"></track><!-- Tracks need an ending tag thanks to IE9 -->
+                                        <track kind="subtitles" src="demo.captions.vtt" srclang="en" label="English"></track><!-- Tracks need an ending tag thanks to IE9 -->
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
                     </form>
-
                 </div><!-- /.navbar-collapse -->
 
             </div><!-- /.container-fluid -->
 
         </nav>
+
+
+
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">
